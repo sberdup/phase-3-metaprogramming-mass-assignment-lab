@@ -1,3 +1,10 @@
+require 'pry'
 class Person
-  # your code here
+  def initialize(data_hash)
+    #binding.pry
+    data_hash.each do |key, value|
+      self.class.attr_accessor(key)
+      self.send("#{key}=",value)
+    end
+  end
 end
